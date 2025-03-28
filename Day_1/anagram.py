@@ -1,4 +1,4 @@
-
+# check if string is anagram or not
 str_input1 = "abcd"
 str_input2 = "abdd"
 
