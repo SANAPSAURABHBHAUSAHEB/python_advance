@@ -1,0 +1,32 @@
+---------------------------------------------------------
+# Installation and pre settings
+pip install Django
+mkdir djangotutorial
+django-admin startproject mysite djangotutorial - creates main directory structure
+python manage.py runserver - runs server
+python manage.py startapp polls - That’ll create a directory polls, creates a template structure for polls page
+--------------------------------------------------------
+# creates a static hello world
+add controller logic --- /app/view.py (files exist, add controllers and define templates)
+define a URL configuration, or “URLconf” --- /app/url.py (need to create for app)
+update main/mysite url configuration to add app urls --- url.py
+---------------------------------------------------------
+# add db to app
+mysite/settings.py DATABASES (default sqllite3; change to type of db and configure)
+python manage.py migrate (create table in db)
+update /app/models.py (creates table schema)
+Edit the mysite/settings.py file and add that dotted path to the INSTALLED_APPS setting --- "polls.apps.PollsConfig"
+python manage.py makemigrations polls (creates persistent migration file)
+python manage.py sqlmigrate polls 0001
+python manage.py migrate (invokes creation of tables in db)
+----------------------------------------------------------
+# Debug Errors
+python manage.py check
+----------------------------------------------------------
+# Interactive Shell
+python manage.py shell
+----------------------------------------------------------
+# Django Admin
+python manage.py createsuperuser
+----------------------------------------------------------
+Settings file DEBUG= True/False
